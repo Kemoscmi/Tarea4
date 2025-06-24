@@ -1,0 +1,136 @@
+/********** Template CSS **********/
+:root {
+    --primary: #3CB815;
+    --secondary: #F65005;
+    --light: #F7F8FC;
+    --dark: #111111;
+}
+
+
+/*** Section Header ***/
+.section-header {
+    position: relative;
+    padding-top: 35px;  /* Aumenté un poco el padding */
+    padding-bottom: 20px; /* Espaciado adicional en la parte inferior */
+}
+
+.section-header::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+}
+
+.section-header::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 2px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+}
+
+.section-header.text-start::before,
+.section-header.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+/* Mejores Frutas */
+.mejores-frutas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-direction: row; /* Alinea en fila en pantallas grandes */
+}
+
+.mejores-frutas img {
+  border-radius: 50%;
+  width: 100px;  /* Ajuste el tamaño de la imagen */
+  height: 100px; /* Asegúrate de que la imagen tenga un tamaño adecuado */
+  object-fit: cover;
+}
+
+.mejores-frutas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mejores-frutas ul li::before {
+  content: "✔️";
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .mejores-frutas {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    text-align: center;
+  }
+}
+
+/* Características */
+.caracteristicas {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten */
+}
+
+.caracteristica {
+  flex: 1;
+  margin: 0 1rem;
+  text-align: center;
+  min-width: 250px;  /* Evita que los elementos se compriman demasiado */
+}
+/* Productos */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.producto {
+  text-align: center;
+  padding: 1rem;
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover; /* Asegura que las imágenes no se deformen */
+}
+
+@media (max-width: 768px) {
+  .productos {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más pequeñas */
+  }
+}
+.finca {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+footer {
+  background-color: #111;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer .btn-link {
+  color: white;
+}
+
+footer .btn-link:hover {
+  text-decoration: underline;
+}
+
+
